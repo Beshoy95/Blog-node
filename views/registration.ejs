@@ -1,0 +1,32 @@
+<%- include("header.ejs") %>
+
+<div class="container my-5">
+  <form action="/handleRegister" method="post">
+    <input
+      type="text"
+      name="name"
+      class="form-control mb-3"
+      placeholder="Enter your name"
+    />
+    <input
+      type="email"
+      name="email"
+      class="form-control mb-3"
+      placeholder="Enter your email"
+    />
+    
+    <% if (! isValid) { %>
+        <div class="alert alert-danger">Email exists</div>
+    <% } %>
+
+    <input
+      type="password"
+      name="password"
+      class="form-control mb-3"
+      placeholder="Enter your password"
+    />
+    <button class="btn btn-info w-100 mt-3">Register</button>
+  </form>
+</div>
+
+<%- include("footer.ejs") %>

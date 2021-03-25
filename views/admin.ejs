@@ -1,0 +1,42 @@
+<%- include("header.ejs") %> 
+
+<div class="d-flex justify-content-end m-4">
+    <button class="btn btn-info">Add Article</button>
+</div>
+
+<div class="container">
+   <form action="search" method="get">
+    <div class="w-75 m-auto input-group">
+        <input placeholder="Search...." class="form-control" type="text" name="search" id="">
+        <button class="btn btn-outline-success mx-3">Search</button>
+    </div>
+   </form>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+      <% for( let index = 0; index < data.length; index++ ) { %>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <div class="card text-center shadow">
+                <div class="card-header">
+                    <h3><%= data[index].title %> </h3>
+                </div>
+                <div class="card-body">
+                    <%= data[index].blogtext %>
+                    <div class="button-group mt-4">
+                        <button class="btn btn-primary">Read More</button>
+                        <button class="btn btn-info">Edit</button>
+                        <button class="btn btn-danger">Delete</button>
+
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <%= data[index].date %>
+                </div>
+            </div>
+        </div>
+      <% } %>
+    </div>
+</div>
+
+<%- include("footer.ejs") %> 

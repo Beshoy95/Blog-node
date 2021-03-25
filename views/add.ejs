@@ -1,0 +1,13 @@
+<%- include("header.ejs") %>
+
+<div class="container w-50 m-auto pt-5">
+    <form action="/handleAdd" method="POST">
+        <label for="title">Article Title</label>
+        <input name="title" id="title" type="text" class="form-control" placeholder="This is a title">
+        <label class="mt-4" for="article">Article Text</label>
+        <textarea name="blogtext" id="article" name="" rows="7" placeholder="Some Text Here" class=" form-control"></textarea>
+        <button class="btn btn-info w-100 my-4">Add</button>
+    </form>
+</div>
+
+<%- include("footer.ejs") %> 
